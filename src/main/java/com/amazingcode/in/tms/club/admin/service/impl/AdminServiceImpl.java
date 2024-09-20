@@ -24,4 +24,10 @@ public class AdminServiceImpl implements AdminService {
         logger.info("Request recieved to create admin : "+admin);
         return adminRepository.save(admin);
     }
+
+    @Override
+    public Admin loginAdmin(Admin admin) {
+        logger.info("Request recieved to login admin : "+admin);
+        return adminRepository.findByEmailAddressAndPassword(admin.getEmailAddress(), admin.getPassword());
+    }
 }

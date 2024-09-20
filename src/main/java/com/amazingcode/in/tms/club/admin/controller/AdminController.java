@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,5 +29,11 @@ public class AdminController {
     public ResponseEntity<Admin> createAdmin(@RequestBody Admin admin){
         logger.info("Request recieved to create admin : "+admin);
         return ResponseEntity.status(HttpStatus.CREATED).body(adminService.addAdmin(admin));
+    }
+
+    @GetMapping("/login")
+    public ResponseEntity<Admin> loginAdmin(@RequestBody Admin admin){
+        logger.info("Request recieved to login admin : "+admin);
+        return ResponseEntity.status(HttpStatus.FOUND).body(adminService.loginAdmin(admin));
     }
 }

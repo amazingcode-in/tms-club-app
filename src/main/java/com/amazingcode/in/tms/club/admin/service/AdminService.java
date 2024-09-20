@@ -4,4 +4,5 @@ import com.amazingcode.in.tms.club.admin.entity.Admin;
 
 public interface AdminService {
     Admin addAdmin(Admin admin);
+    Admin loginAdmin(Admin admin);
 }
