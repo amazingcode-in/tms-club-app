@@ -2,6 +2,7 @@ package com.amazingcode.in.tms.club.admin.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +21,7 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "admin_id",length = 4, nullable = false, unique = true)
+    @Column(name = "admin_id",length = 4, nullable = true, unique = true)
     private Long adminId;
 
     @Size(min = 5, max = 20, message = "Password must be greater that 4 or equal to 20 character long.")
@@ -56,7 +57,7 @@ public class Admin {
     @Column(name = "email_address",length = 40, nullable = false, unique = true)
     private String emailAddress;
 
-    @NotBlank(message = "Date of birth is mandatory")
+    @NotNull(message = "Date of birth is mandatory")
     @Column(name = "date_of_birth", nullable = false)
     private LocalDate dateOfBirth;
 
