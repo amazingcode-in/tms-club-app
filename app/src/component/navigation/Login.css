@@ -1,0 +1,35 @@
+/* Login.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  .login-container {
+    background: #f8f9fa; /* Light background color */
+    border-radius: 25px; /* Circular border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    padding: 30px; /* Padding inside the container */
+    transition: transform 0.2s; /* Smooth hover effect */
+    max-height: 90vh; /* Limit height to 90% of viewport */
+    overflow: auto; /* Allow scrolling inside the container if needed */
+  }
+  
+  .login-container:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+  }
+  
+  h4 {
+    color: #343a40; /* Darker color for heading */
+  }
+  
+  .btn-link {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .btn-link:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
