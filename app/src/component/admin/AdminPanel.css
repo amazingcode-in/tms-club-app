@@ -1,0 +1,27 @@
+.admin-panel {
+    background-color: #f8f9fa;
+  }
+  
+  .sidebar {
+    background-color: #343a40;
+    color: white;
+    height: 100vh; /* Full height for the sidebar */
+    padding: 20px;
+  }
+  
+  .sidebar h4 {
+    color: #ffffff;
+  }
+  
+  .sidebar .nav-link {
+    color: #ffffff;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #495057; /* Darker shade on hover */
+  }
+  
+  .sidebar .btn-danger {
+    background-color: #dc3545; /* Bootstrap danger color */
+  }
+  
