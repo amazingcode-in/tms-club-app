@@ -1,0 +1,43 @@
+services:
+
+  tms-club-frontend:
+    container_name: tms-club-frontend
+    build: 
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - tms-club-backend
+
+  tms-club-backend:
+    container_name: tms-club-backend
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://tms-club-db:5432/toastmasters-club
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - tms-club-net
+    
+  postgres:
+    image: postgres:latest
+    container_name: tms-club-db
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: toastmasters-club
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    networks:
+      - tms-club-net
+
+networks:
+  tms-club-net:
+    driver: bridge
