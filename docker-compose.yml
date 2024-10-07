@@ -18,17 +18,17 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - postgres
+      - tms-club-database
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://tms-club-db:5432/toastmasters-club
+      SPRING_DATASOURCE_URL: jdbc:postgresql://tms-club-database:5432/toastmasters-club
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: root
     networks:
       - tms-club-net
     
-  postgres:
+  tms-club-database:
     image: postgres:latest
-    container_name: tms-club-db
+    container_name: tms-club-database
     ports:
       - "5434:5432"
     environment:
