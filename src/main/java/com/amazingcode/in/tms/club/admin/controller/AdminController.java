@@ -33,7 +33,7 @@ public class AdminController {
         return ResponseEntity.status(HttpStatus.CREATED).body(adminService.addAdmin(admin));
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<Admin> loginAdmin(@RequestBody Admin admin){
         logger.info("Request recieved to login admin : "+admin);
         return ResponseEntity.status(HttpStatus.FOUND).body(adminService.loginAdmin(admin));
